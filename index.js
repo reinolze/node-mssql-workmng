@@ -246,7 +246,7 @@ app.post('/WorkerChk/Comm/Delete/', async (req, res) => {
 
 //위험성평가 근로자 확인
 app.post('/WorkerChk/WorkerChk/Order/Chk', async (req, res) => {
-    //console.log(req.body)
+    console.log(req.body)
    
     try {
         await pool.connect();
