@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="./Order.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+    <script src="./index.js"></script>
+    <script src="./Order.js"></script>
+
+    
+    <title>TBM 및 위험성평가 근로자 확인 - (주)에이스전기통신</title>
+
+    <script>
+
+
+    </script>
+
+</head>
+<body>
+    <center>
+    <div id="myForm" style="width:398px; height:auto; float: center;">
+        <div class="Company"><center>(주)에이스전기통신</center></div>
+        <div id="chkStat"></div>
+        <div class="SubTitle">■ TBM 및 위험성평가 근로자 확인</div>
+        <table width="100%">
+            <tr>
+                <th width="20%" class="text-center">작업명</th>
+                <td id="OrderName" colspan="3"></td>
+            </tr>
+            <tr>
+                <th width="20%" class="text-center">날짜</th>
+                <td id="OrderDate" width="30%" class="text-center"></td>
+                <th width="20%" class="text-center">장소</th>
+                <td id="OrderLocation"width="30%"></td>
+            </tr>
+            <tr>
+                <th width="20%" class="text-center">참고사항</th>
+                <td id="OrderComment"colspan="3"></td>
+            </tr>
+        </table>
+        <!-- <div align="center"><div style="width:250px;"><input id="OrderView" type="button" value="작업지시서 확인" class="button"></div></div> -->
+        <div align="center" style="margin: 5px ;"><a href="#" id="OrderView" class="btn btn-outline-primary btn-sm"><i class="bi bi-body-text"></i> 작업지시서 확인</a></div>
+        <!-- <hr> -->        
+        <div class="division-line"></div>
+        <div class="SubTitle" style="float: left;width:70%">■ 위험성평가 근로자 의견 작성</div>
+        <!-- <div style="float: right;width:30%"><input type="button" value="새로고침" class="btn btn-outline-primary btn-sm" onclick="Get_WorkerComm()"></div> -->
+        <div style="float: right;width:30%"><a href="#" class="btn btn-outline-primary btn-sm" onclick="Get_WorkerComm()" style="margin: 5px ;"><i class="bi bi-arrow-clockwise"></i> 새로고침</a></div>
+        
+        <table id="comment" width="100%">
+            <tr >
+                <th width="10%"><input type="button" value=" + " class="buttonP" onclick="add_textbox()"></th>
+                <th width="40%" class="text-center">유해요인</th>
+                <th width="40%" class="text-center">현장조치 사항</th>
+                <th width="10%" class="text-center">중지</th>
+                <th width="0px" style="display: none;">Seq</th>
+                <!-- <th width="10%"><input type="checkbox"></th> -->
+            </tr>
+
+
+
+        </table>
+        
+
+
+        <div id="docNumber"></div>
+        <div id="docrotet"></div>
+        <div style="float: left;width:45%;" align="right" class="worker"><i class="bi bi-person-bounding-box"></i></div>　<div id="workName" style="float: right;width:50%" align="left" class="worker"></div>
+        
+        <p align="center"><a href="#" id="submit" value='' class="btn btn-outline-primary btn-lg"><i class="bi bi-check2-circle"></i> TBM 및 위험성 수시평가 확인</a></p>
+    </div>
+    <script>
+        //작업 일반사항 가져오기(WorkerChk)
+        //var OrderMst_4WorkerChk = new getOrderMst_4WorkerChk();
+        getOrderMst_4WorkerChk();
+
+
+            // document.getElementById(`submit`).value="TBM 및 위험성 수시평가 확인"
+
+
+            Get_WorkerComm();
+
+
+    </script>
+    </center>
+</body>
+</html>

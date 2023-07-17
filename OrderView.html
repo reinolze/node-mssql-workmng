@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        // screen.lockOrientation('portrait');
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="./Order.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+    <script src="./index.js"></script>
+    <script src="./Order.js"></script>
+
+    
+    <title>작업지시서 - (주)에이스전기통신</title>
+    
+</head>
+<body>
+    <center>
+    <div id="myForm" style="width:398px; height:auto; float: center;">
+        <div class="Company"><center>(주)에이스전기통신</center></div>
+        <div id="orderNo" class="SubTitle">■ 작업지시서</div>
+        <table width="100%">
+            <tr>
+                <th width="20%" class="text-center">작업명</th>
+                <td id="OrderName" colspan="3"></td>
+            </tr>
+            <tr>
+                <th width="20%" class="text-center">날짜</th>
+                <td id="OrderDate" width="30%" class="text-center"></td>
+                <th width="20%" class="text-center">장소</th>
+                <td id="OrderLocation"width="30%"></td>
+            </tr>
+            <tr>
+                <th width="20%" class="text-center">참고사항</th>
+                <td id="OrderComment"colspan="3"></td>
+            </tr>
+        </table>   
+        <br>
+        <div class="division-line"></div>
+        <input calss="btn_span" id="btn_span_Risk" type="checkbox" >
+        <input calss="btn_span" id="btn_span_RiskComm" type="checkbox" >
+        <input calss="btn_span" id="btn_span_Car" type="checkbox" >
+        <div class="SubTitle" style="background-color: #BDBDBD;">■ 작업 전 위험요소 확인</div>
+        <div class="btn_span_label" style="background-color: #BDBDBD;"><label for="btn_span_Risk"><i class="bi bi-caret-down-fill"></i></label></div>
+        
+        <!-- <input calss="btn_span" id="btn_span_Risk" type="checkbox" checked ><label for="btn_span_Risk" calss ="btn_span_label" style="margin-bottom: 0;"><h3 style="margin-bottom: 0;"><i class="bi bi-caret-down-fill"></i></h3></label> -->
+        <div id="tblRisk">
+        <table id="risk" width="100%">
+            <tr >
+                <th width="10%" class="text-center">확인</th>
+                <th width="20%" class="text-center">구분</th>
+                <th width="70%" class="text-center">위험요소</th>
+                <th width="0px" style="display: none;">Seq</th>
+                <!-- <th width="0px">Seq</th> -->
+            </tr>
+        </table>    
+ 
+        </div>
+        <div class="SubTitle" id="RiskComm" style="background-color: #BDBDBD;">■ 근로자 참여 위험성 평가</div>
+        <div class="btn_span_label" style="background-color: #BDBDBD;"><label for="btn_span_RiskComm"><i class="bi bi-caret-down-fill"></i></label></div>
+        <div id="tblRiskComm">
+        <table id="comment" width="100%">
+            <tr >
+                <th width="20%" class="text-center">근로자</th>
+                <th width="35%" class="text-center">유해요인</th>
+                <th width="35%" class="text-center">현장조치 사항</th>
+                <th width="10%" class="text-center">중지</th>
+                <th width="0px" style="display: none;">Seq</th>
+                <!-- <th width="10%"><input type="checkbox"></th> -->
+            </tr>
+        </table>
+    </div>
+        <div class="SubTitle" id="OrderCar" style="background-color: #BDBDBD;">■ 작업 투입 차량(00대)</div>
+        <div class="btn_span_label" style="background-color: #BDBDBD;"><label for="btn_span_Car"><i class="bi bi-caret-down-fill"></i></label></div>
+        <div id="tblCar">
+        <table id="Car" width="100%">
+            <tr >
+                <th width="100%" class="text-center">투입 차량</th>
+            </tr>
+        </table> 
+        </div>
+        <div class="SubTitle" id="OrderMan" style="float: left;width:70%;background-color: #BDBDBD;">■ 작업 투입 인원(00명)</div>
+        <div style="float: right;width:30%"><a href="#" class="btn btn-outline-primary btn-sm" onclick="getOrderRiskComm_4OrderView()" style="margin: 5px ;"><i class="bi bi-arrow-clockwise"></i> 새로고침</a></div>
+        <table id="Man" width="100%">
+            <tr >
+                <th width="40%" class="text-center">투입 인원</th>
+                <th width="60%" class="text-center">TBM 및 위험성 평가 확인</th>
+            </tr>
+        </table> 
+
+    </div>
+    <script>
+        get_OrderNo();
+        getOrderMst_4OrderView();
+        getOrderRisk_4OrderView();
+        getOrderCar_4OrderView();
+        getOrderMan_4OrderView();
+        getOrderRiskComm_4OrderView();
+        //console.log(getToday());
+
+        //screen.lockOrientation('portrait');
+        // screen.addEventListener("orientationchange", function () {
+            
+        // });
+    </script>
+    </center>
+</body>
+</html>

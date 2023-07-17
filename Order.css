@@ -1,0 +1,157 @@
+h1{
+    margin: 0px;
+    padding: 0px 0px;;
+}
+table{
+    border: 2px solid;
+    border-collapse: collapse;
+}
+tr{
+    height: 30px;
+    padding: 0px 0px;;
+}
+tr .stop{
+    height: 30px;
+    padding: 0px 0px;;
+    background-color: lightpink;
+}
+th{
+    /* text-align: center; bootstrap 때문에...막힘...어쩐지 안되더라.. */
+    border: 1px solid;
+    padding: 5px 0px;;
+    background-color: #464646;
+    border-color: black;
+    color: white;
+
+}
+td{
+    border: 1px solid;
+    padding: 0px 0px;;
+    
+}
+
+.Company{
+    margin: 0px;
+    padding: 5px 5px;;
+    border-radius: 5px 5px 0 0;
+    background: rgb(11,4,138);
+    background: linear-gradient(158deg, rgba(11,4,138,1) 0%, rgba(9,9,121,1) 56%, rgba(255,0,155,1) 100%);
+    font-weight: 600;
+    color: white;
+}
+input{
+    height: 95%;
+    width: 95%;
+    margin: 5px;
+    padding: 0px 5px;
+    font-size:medium;
+     /* border: 0px;  */
+}
+
+
+input[type=text]{
+    border: 0px;
+    margin: 0px;
+    padding: 0px 0px;
+}
+ input[type=checkbox]{
+    margin: 0px;
+} 
+
+.buttonP{
+    border: 0px;
+    margin: 0px;
+    padding: 0px 0px;
+    font-size: medium;  
+    color: blue;  
+    background-color: #464646;
+}
+
+.buttonM{
+    border: 0px;
+    margin: 0px;
+    padding: 0px 0px;
+    font-size: medium;    
+    color: red;
+    background-color: white;
+}
+
+
+.SubTitle{
+    height: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
+    float: left;
+    width: 90%;
+}
+
+#btn_span_Risk{
+    display: none;
+}
+#btn_span_RiskComm{
+    display: none;
+}
+#btn_span_Car{
+    display: none;
+}
+#btn_span_Risk:checked ~ #tblRisk { 
+    width: 100%;
+    display:contents;}
+#tblRisk {display: none;}
+
+#btn_span_RiskComm:checked ~ #tblRiskComm { 
+    width: 100%;
+    display:contents;}
+#tblRiskComm {display: none;}
+
+#btn_span_Car:checked ~ #tblCar { 
+    width: 100%;
+    display:contents;}
+#tblCar {display: none;}
+
+
+.btn_span_label{
+    height: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
+    /* margin-right: 0.9rem; */
+    padding: auto;
+    float: right;
+    width: 10%;
+}
+
+.button{
+    margin: 5px;
+    height: 30px;
+    display:inline-block;
+    background-color:#275efe ;
+    color: whitesmoke;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    padding:5px 10px;
+    font-weight: 700;
+    position: relative;
+    
+    
+}
+.division-line{
+    border-top: 1px solid rgb(11,4,138);
+    
+    margin: 0px auto;
+    width: 90%;    
+
+}
+.worker{
+    font-size: 30px;
+    font-weight: 600;
+
+}
+/* input .text{
+    height: 40px;
+
+} */
