@@ -352,7 +352,32 @@ const Update_Comm = (obj) => {
 
     Get_WorkerComm();
 }
+const Update_OrderChk = () => {
 
+    try{
+        var OrderNo = parseInt(OrderSeq);
+        var CommMan = parseInt(WorkerSeq);
+        var SignDate = getToday()
+        
+        var strQuery={OrderNo,CommMan,SignDate}
+        var strJson = JSON.stringify(strQuery);
+    
+        //console.log(strJson,getToday());
+        fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk/Order/Chk`,{
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: strJson
+        })    
+    } catch (error) {
+        console.log(error);
+    }
+
+    location.reload(true);
+    
+}
 
 const get_DocNumber = () =>{
     var DocNumber = new URLSearchParams(location.search).get('Doc')

@@ -244,6 +244,24 @@ app.post('/WorkerChk/Comm/Delete/', async (req, res) => {
     }    
 });
 
+//위험성평가 근로자 확인
+app.post('/WorkerChk/WorkerChk/Order/Chk', async (req, res) => {
+    //console.log(req.body)
+   
+    try {
+        await pool.connect();
+                
+        const result = await pool.request()
+            .input('OrderSeq', mssql.Int, req.body.OrderNo)
+            .input('ManSeq', mssql.Int, req.body.CommMan)
+            .input('SignDate', mssql.DateTime, req.body.SignDate)
+            .execute(`dbo.SP_UpdateOrderManSign`);
+             
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json(error);        
+    }    
+});
 
 app.get('/postwork/:conname/:status', async (req, res) => {
     // ./postwork/:conname/:status로 접속하면 해당 공사, status 별로 리스트 업
