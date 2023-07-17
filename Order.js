@@ -8,7 +8,7 @@
 
 // var OrderMst_4WorkerChk = new getOrderMst_4WorkerChk();
 function getOrderMst_4WorkerChk() {       
-    fetch(`http://localhost:3000/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`)
         .then((response) => response.json())
         .then((data) => {
             //console.log(data);
@@ -33,7 +33,7 @@ function getOrderMst_4WorkerChk() {
     }
     
 function getOrderMst_4OrderView() {       
-    fetch(`http://localhost:3000/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`)
         .then((response) => response.json())
         .then((data) => {
             //console.log(data);
@@ -57,7 +57,7 @@ function getOrderMst_4OrderView() {
     }
 
 function getOrderRisk_4OrderView() {       
-    fetch(`http://localhost:3000/OrderView/Risk/${OrderSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/OrderView/Risk/${OrderSeq}`)
         .then((response) => response.json())
         .then((data) => {
             //console.log(data);
@@ -90,7 +90,7 @@ function getOrderRisk_4OrderView() {
     }
 
 function getOrderCar_4OrderView() {       
-    fetch(`http://localhost:3000/OrderView/Car/${OrderSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/OrderView/Car/${OrderSeq}`)
         .then((response) => response.json())
         .then((data) => {
             // console.log(data);
@@ -115,7 +115,7 @@ function getOrderCar_4OrderView() {
     } 
     
 function getOrderMan_4OrderView() {       
-    fetch(`http://localhost:3000/OrderView/Man/${OrderSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/OrderView/Man/${OrderSeq}`)
         .then((response) => response.json())
         .then((data) => {
              //console.log(data);
@@ -156,7 +156,7 @@ function getOrderMan_4OrderView() {
     
             Comm.childNodes[i].remove();
         }
-        fetch(`http://localhost:3000/OrderView/Comm/${OrderSeq}`)
+        fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/OrderView/Comm/${OrderSeq}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
@@ -216,7 +216,7 @@ const add_textbox = () => {
 
     const Comm = document.getElementById("comment");
 
-    fetch(`http://localhost:3000/WorkerChk/Comm/${OrderSeq}/${WorkerSeq}`)
+    fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk/Comm/${OrderSeq}/${WorkerSeq}`)
         .then((response) => response.json())
         .then((data) => {
             
@@ -285,7 +285,7 @@ const remove = (obj) => {
             var strQuery={OrderRiskCommSeq,DelMan,}
             var strJson = JSON.stringify(strQuery);
 
-            fetch(`http://localhost:3000/WorkerChk/Comm/Delete`,{
+            fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk/Comm/Delete`,{
                 headers: {
                     // 'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -337,7 +337,7 @@ const Update_Comm = (obj) => {
         var strJson = JSON.stringify(strQuery);
     
         console.log(strJson);
-        fetch(`http://localhost:3000/WorkerChk/Comm/Update`,{
+        fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk/Comm/Update`,{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
