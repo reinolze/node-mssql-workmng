@@ -4,7 +4,7 @@
  if (WorkerSeq == null){ WorkerSeq = 0 } 
 //  console.log(OrderSeq);
 //  console.log(WorkerSeq);
-// //console.log(`http://localhost:3000/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`);
+// //console.log(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk?Doc=${OrderSeq}&Worker=${WorkerSeq}`);
 
 // var OrderMst_4WorkerChk = new getOrderMst_4WorkerChk();
 function getOrderMst_4WorkerChk() {       
@@ -159,7 +159,7 @@ function getOrderMan_4OrderView() {
         fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/OrderView/Comm/${OrderSeq}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                //console.log(data);
                 // console.log(data.length);
                 document.getElementById("RiskComm").innerText='■ 근로자 참여 위험성 평가(' + data.length + '건)'
                 
@@ -171,7 +171,7 @@ function getOrderMan_4OrderView() {
                              newtr.innerHTML = "<td width='20%' align='center' vertical-align='middle' style='font-size: small;'></td><td width='35%' align='left' vertical-align='middle' style='font-size: small;'></td><td width='35%' align='left' vertical-align='middle' style='font-size: small;'></td><td width='10%' align='center' vertical-align='middle'><input type='checkbox' disabled></td>";
     
                             box.appendChild(newtr);
-                            console.log(newtr.childNodes[1].childNodes[0]);                        
+                            //console.log(newtr.childNodes[1].childNodes[0]);                        
                             
                              newtr.childNodes[0].innerText=data[i].ManName;
                             //  newtr.childNodes[1].childNodes[0].value=data[i].Comment;
@@ -274,7 +274,7 @@ const RemoveAllComm = () =>{
 const remove = (obj) => {
     //console.log(obj.parentNode.parentNode)
     //obj.parentNode.parentNode.innerHTML="" //내용을 지우니까...remove가 안됨;;
-    console.log(obj.parentNode.parentNode.childNodes[4].innerText)
+    //console.log(obj.parentNode.parentNode.childNodes[4].innerText)
     
      if(obj.parentNode.parentNode.childNodes[4].innerText > 0){
         var answer = confirm('DB에 저장되어있는 내용입니다.\n삭제 할까요?')
@@ -309,7 +309,7 @@ const remove = (obj) => {
 
 const get_OrderNo = () =>{
     var DocNumber = new URLSearchParams(location.search).get('Doc')
-    console.log(DocNumber);
+    //console.log(DocNumber);
 
     document.getElementById('orderNo').innerText='■ 작업지시서(OrderNo : ' + DocNumber + ')';
 
@@ -336,7 +336,7 @@ const Update_Comm = (obj) => {
         var strQuery={OrderRiskCommSeq,OrderNo,CommMan,Comment,Solution,isStop}
         var strJson = JSON.stringify(strQuery);
     
-        console.log(strJson);
+        //console.log(strJson);
         fetch(`https://port-0-node-mssql-workmng-f6ncg32mlk6hp2y6.sel4.cloudtype.app/WorkerChk/Comm/Update`,{
             headers: {
                 'Accept': 'application/json',
@@ -431,7 +431,8 @@ function chkMyStat(MyStat){
     //console.log(MyStat);
     switch(MyStat){
         case -1:
-            document.getElementById(`chkStat`).innerText="위험성평가 확인 대상이 아닙니다."
+            document.getElementById(`chkStat`).innerHTML="<i class='bi bi-exclamation-triangle'></i> 위험성평가 확인 대상이 아닙니다."
+            document.getElementById(`chkStat`).setAttribute("class","alert alert-danger")
             document.getElementById(`chkStat`).style.visibility='visible'
             document.getElementById(`submit`).style.visibility='hidden'
 
@@ -442,7 +443,8 @@ function chkMyStat(MyStat){
 
             break;
         case 1:
-            document.getElementById(`chkStat`).innerText="근로자가 위험성평가 확인 완료한 작업입니다."
+            document.getElementById(`chkStat`).innerHTML="<i class='bi bi-check2-circle'></i> 근로자가 위험성평가 확인 완료한 작업입니다."
+            document.getElementById(`chkStat`).setAttribute("class","alert alert-success")
             document.getElementById(`chkStat`).style.visibility='visible'
             document.getElementById(`submit`).style.visibility='hidden'
     }
